@@ -1,0 +1,56 @@
+{
+  "name": "@khulnasoft/react-rum",
+  "version": "0.2.5",
+  "description": "Optimise the real world performance of your react applications",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup",
+    "dev": "npm link && tsup --watch --ignore-watch node_modules --ignore-watch example --ignore-watch .github & cd example && npm link @khulnasoft/react-rum && npm run dev",
+    "release": "release-it"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.tsx"
+    ],
+    "minify": true,
+    "dts": true,
+    "splitting": false,
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "external": [
+      "react"
+    ]
+  },
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khulnasoft/react-rum.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khulnasoft/react-rum/issues"
+  },
+  "homepage": "https://github.com/khulnasoft/react-rum#readme",
+  "dependencies": {
+    "js-cookie": "^3.0.5",
+    "react-error-boundary": "^4.0.11",
+    "web-vitals": "^3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@release-it/keep-a-changelog": "^4.0.0",
+    "@types/js-cookie": "^3.0.4",
+    "@types/react": "^18.2.23",
+    "axios": "^1.6.0",
+    "release-it": "^16.1.5",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  }
+}
