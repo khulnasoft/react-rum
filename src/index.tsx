@@ -29,15 +29,15 @@ export interface KengineRumProps {
 }
 export function KengineRum(props: KengineRumProps) {
 
-  const sessionId = Cookies.get('baselime-session-id')
+  const sessionId = Cookies.get('kengine-session-id')
 
   if (!sessionId) {
-    Cookies.set('baselime-session-id', makeUUID())
+    Cookies.set('kengine-session-id', makeUUID())
   }
 
   const initialData: KengineRumConfig = {
     userId: props.userId,
-    sessionId: Cookies.get('baselime-session-id'),
+    sessionId: Cookies.get('kengine-session-id'),
     pageLoadId: makeUUID(),
     namespace: props.namespace,
     apiKey: props.apiKey,
